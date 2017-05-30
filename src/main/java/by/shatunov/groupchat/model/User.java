@@ -1,20 +1,24 @@
 package by.shatunov.groupchat.model;
 
-public class User {
+public class User extends Entity {
 
-    private String nick;
-    private String userID;
+    private String sessionID;
 
-    public User(String nick, String userID) {
-        this.nick = nick;
-        this.userID = userID;
+    public User(String name, String sessionID, String userID) {
+        super.name = name;
+        super.id = userID;
+        this.sessionID = sessionID;
     }
 
-    public String getNick() {
-        return nick;
+    public String getName() {
+        return name;
     }
 
-    public String getUserID() {
-        return userID;
+    public String getId() {
+        return super.getId();
+    }
+
+    public String getSessionID() {
+        return sessionID;
     }
 }

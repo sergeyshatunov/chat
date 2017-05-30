@@ -3,15 +3,24 @@ package by.shatunov.groupchat.model;
 public class Message {
 
     private User from;
-    private String message;
+    private Entity target;
+    private String text;
 
-    public Message(User from, String message) {
+    public Message(User from, Entity target, String text) {
         this.from = from;
-        this.message = message;
+        this.target = target;
+        this.text = text;
     }
 
-    @Override
-    public String toString() {
-        return "<strong>" + from.getNick() + "</strong>:" + message;
+    public User getFrom() {
+        return from;
+    }
+
+    public Entity getTarget() {
+        return target;
+    }
+
+    public String getText() {
+        return text;
     }
 }
